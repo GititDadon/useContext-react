@@ -1,0 +1,566 @@
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+/* Page Heading */
+
+.page-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.page-heading span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #7c3aed;
+}
+
+.page-heading h1 {
+    font-size: 44px;
+    letter-spacing: -2px;
+    margin: 14px 0 10px;
+    color: #252238;
+}
+
+.page-heading p {
+    color: #858196;
+    font-size: 16px;
+}
+
+/* =========================
+   EXERCISES GRID
+========================= */
+
+.exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.exercise-card {
+    width: 100%;
+    max-width: 440px;
+    background: #ffffff;
+    border: 1px solid #e9e6f0;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(37, 34, 56, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.exercise-number {
+    color: #7c3aed;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.exercise-card h2 {
+    font-size: 26px;
+    margin: 0;
+}
+
+.exercise-card p {
+    font-size: 14px;
+    color: #858196;
+    margin: 0;
+}
+
+/* =========================
+   VALUE DISPLAY
+========================= */
+
+.value-display {
+    min-height: 120px;
+    background: #f7f5fc;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #7c3aed;
+    transition: all 0.3s ease;
+}
+
+.value-display.on {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.value-display.off {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* =========================
+   EXERCISE 1 - TOGGLE
+========================= */
+
+.toggle-switch {
+    width: 76px;
+    height: 40px;
+    background: #d1d5db;
+    border-radius: 50px;
+    padding: 4px;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: background 0.3s;
+}
+
+.toggle-circle {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.toggle-switch.active {
+    background: #7c3aed;
+}
+
+.toggle-switch.active .toggle-circle {
+    transform: translateX(36px);
+}
+
+/* =========================
+   SHARED BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 12px 8px;
+    border: none;
+    border-radius: 10px;
+    background: #7c3aed;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.buttons button:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+}
+
+.buttons button:active {
+    transform: scale(0.97);
+}
+
+.buttons button:focus-visible {
+    outline: 3px solid #c4b5fd;
+    outline-offset: 3px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .app-container {
+        padding: 30px 16px;
+    }
+
+    .page-heading h1 {
+        font-size: 30px;
+    }
+
+    .exercises-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exercise-card {
+        max-width: 100%;
+    }
+}
+
+/* =========================
+   EXERCISE 4 - useInput
+========================= */
+
+.custom-input {
+    width: 100%;
+    padding: 15px 16px;
+    border: 1px solid #ded9eb;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #252238;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.custom-input:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.custom-input::placeholder {
+    color: #a5a1b2;
+}
+
+.input-preview {
+    min-height: 100px;
+    padding: 20px;
+    background: #f7f5fc;
+    border-radius: 14px;
+    color: #7c3aed;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+/* =========================
+   EXERCISE 5 - useTextarea
+========================= */
+
+.custom-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px 16px;
+    border: 1px solid #ded9eb;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #252238;
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.custom-textarea:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.custom-textarea::placeholder {
+    color: #a5a1b2;
+}
+
+.input-preview {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+/* =========================
+   EXERCISE 6 - usePrevious
+========================= */
+
+.previous-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.previous-box,
+.current-box {
+    min-height: 120px;
+    padding: 20px 12px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.previous-box {
+    background: #f1f0f5;
+    color: #858196;
+}
+
+.current-box {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.previous-box span,
+.current-box span {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.previous-box h3,
+.current-box h3 {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+}
+/* =========================
+   EXERCISE 7 - useInterval
+========================= */
+
+.timer-unit {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 8px;
+    align-self: center;
+    color: #858196;
+}
+
+.timer-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.timer-status.running {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.timer-status.stopped {
+    background: #f1f0f5;
+    color: #858196;
+}
+
+.timer-status.running .status-dot {
+    animation: timer-pulse 1.5s infinite;
+}
+
+@keyframes timer-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.buttons button:disabled {
+    background: #e5e1ec;
+    color: #9b97a8;
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.8;
+}
+/* =========================
+   EXERCISE 8 - useTimeout
+========================= */
+
+.timeout-message {
+    min-height: 120px;
+    padding: 24px;
+    border-radius: 16px;
+    background: #f7f5fc;
+    color: #7c3aed;
+    font-size: 26px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.timeout-message.completed {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+/* =========================
+   EXERCISE 9 - useDocumentTitle
+========================= */
+
+.browser-preview {
+    background: #f7f5fc;
+    border: 1px solid #e9e6f0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #e9e6f0;
+    padding: 12px;
+}
+
+.browser-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.browser-dot.red {
+    background: #ff605c;
+}
+
+.browser-dot.yellow {
+    background: #ffbd44;
+}
+
+.browser-dot.green {
+    background: #00ca4e;
+}
+
+.browser-tab {
+    background: #ffffff;
+    padding: 12px 16px;
+    margin: 10px 12px 0;
+    border-radius: 10px 10px 0 0;
+    color: #7c3aed;
+    font-size: 13px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.browser-content {
+    background: #ffffff;
+    min-height: 85px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #858196;
+}
+/* =========================
+   EXERCISE 10 - useWindowSize
+========================= */
+
+.window-size-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.dimension-box {
+    background: #f7f5fc;
+    border-radius: 16px;
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dimension-box span {
+    color: #858196;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dimension-box h3 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #7c3aed;
+    margin: 0;
+}
+
+.device-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    background: #ede9fe;
+    border-radius: 14px;
+}
+
+.device-display span {
+    font-size: 12px;
+    color: #858196;
+}
+
+.device-display h3 {
+    font-size: 22px;
+    color: #7c3aed;
+    margin: 0;
+}
+
+/* =========================
+   EXERCISE 11 - useKeyPress
+========================= */
+
+.keyboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.keyboard-key {
+    min-height: 100px;
+    padding: 16px 8px;
+    background: #f7f5fc;
+    border: 1px solid #ded9eb;
+    border-bottom: 5px solid #ded9eb;
+    border-radius: 12px;
+    color: #252238;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.15s ease;
+}
+
+.keyboard-key span {
+    font-size: 11px;
+    font-weight: 500;
+    color: #858196;
+}
+
+.keyboard-key.pressed {
+    background: #7c3aed;
+    color: #ffffff;
+    border-color: #6d28d9;
+    transform: translateY(3px);
+    border-bottom-width: 2px;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+}
+
+.keyboard-key.pressed span {
+    color: #ede9fe;
+}
+
+.keyboard-status {
+    padding: 16px;
+    border-radius: 12px;
+    background: #ede9fe;
+    color: #7c3aed;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
